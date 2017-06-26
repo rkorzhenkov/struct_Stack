@@ -1,4 +1,4 @@
-#include "myStack.h"
+п»ї#include "myStack.h"
 #include <stdio.h>
 
 int main() {
@@ -12,14 +12,14 @@ int main() {
     
     init_stackElement(&head, 0);
     init_stackElement(&head2, 0);
-    init_stack(&S, &head, 0);   //инициализация стека
+    init_stack(&S, &head, 0);   //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚РµРєР°
     init_stack(&Q, &head2, 0);
     
        
-    input_stack(&S); //ввод стека с клавиатуры
+    input_stack(&S); //РІРІРѕРґ СЃС‚РµРєР° СЃ РєР»Р°РІРёР°С‚СѓСЂС‹
     printf("\n");
     
-    stkPrint(S);    //печать стека
+    stkPrint(S);    //РїРµС‡Р°С‚СЊ СЃС‚РµРєР°
     printf("\n");
     
     /*           // pop
@@ -30,18 +30,18 @@ int main() {
     printf("\n");
     */
     
-    /*           //длина стека и вершина
+    /*           //РґР»РёРЅР° СЃС‚РµРєР° Рё РІРµСЂС€РёРЅР°
     printf("length = %d\n", getlength(S));
     printf("top element is = %f\n", get(stkTop(S)));
     */
     
-    /*          //инверсия
+    /*          //РёРЅРІРµСЂСЃРёСЏ
     inverse(&S);
     stkPrint(S);
     printf("\n");
     */
     
-               //слияние
+               //СЃР»РёСЏРЅРёРµ
     printf("now input second stack!\n");
     input_stack(&Q);
     stkPrint(Q);
@@ -52,7 +52,7 @@ int main() {
     printf("\n");
     
     
-                //удаление по ключу
+                //СѓРґР°Р»РµРЅРёРµ РїРѕ РєР»СЋС‡Сѓ
     
     /*printf("input index to search and delete: ");
     scanf("%f", &index);
@@ -61,7 +61,7 @@ int main() {
     printf("\n");
     
     
-    /*             //сортировка
+    /*             //СЃРѕСЂС‚РёСЂРѕРІРєР°
     sort(&S);
     stkPrint(S);
     */

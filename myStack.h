@@ -1,10 +1,10 @@
-#include<stdio.h>
+ï»¿#include<stdio.h>
 #include<malloc.h>
 
 struct stackElement {
-              float x; //ñàìî çíà÷åíèå
-              struct stackElement* prev; //óêàçàòåëü íà ïðåäûäóùèé ýëåìåíò
-              struct stackElement* next; //óêàçàòåëü íà ñëåäóþùèé ýëåìåíò
+              float x; //ÑÐ°Ð¼Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ
+              struct stackElement* prev; //ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒ Ð½Ð° Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚
+              struct stackElement* next; //ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒ Ð½Ð° ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚
               
 };      
 
@@ -18,16 +18,16 @@ struct stackElement {
 
              float get(struct stackElement sE) {
                    return sE.x;      
-             } //ïîëó÷èòü çíà÷åíèå
+             } //Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ
              
              
              struct stackElement* nextElPtr(struct stackElement sE) {
                           return sE.next;
-             } //âîçâðàùàåò óêàçàòåëü íà ñëåäóþùèé ýëåìåíò
+             } //Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒ Ð½Ð° ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚
              
              struct stackElement* previousElPtr(struct stackElement sE) {
                           return sE.prev;
-             } //âîçâðàùàåò óêàçàòåëü íà ïðåäûäóùèé ýëåìåíò
+             } //Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»ÑŒ Ð½Ð° Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚
              
              
              
@@ -35,26 +35,26 @@ struct stackElement {
                   sE->prev = prevElement;
                   prevElement->next = sE;
                   return;
-             } //ñâÿçûâàåò ýëåìåíò ñ äàííûì ïðåäûäóùèì
+             } //ÑÐ²ÑÐ·Ñ‹Ð²Ð°ÐµÑ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ñ Ð´Ð°Ð½Ð½Ñ‹Ð¼ Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¼
              
              void linkToNextEl(struct stackElement* sE, struct stackElement* nextElement) {
                   sE->next = nextElement;
                   nextElement->prev = sE;
                   return;
-             } //ñâÿçûâàåò ýëåìåíò ñ äàííûì ñëåäóþùèì
+             } //ÑÐ²ÑÐ·Ñ‹Ð²Ð°ÐµÑ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ñ Ð´Ð°Ð½Ð½Ñ‹Ð¼ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¼
              
              void nullNextElPtr(struct stackElement* sE) {
                   sE->next = NULL;
                   return;     
-             } //îáíóëåíèå óêàçàòåëÿ íà ñëåäóþùèé ýëåìåíò
+             } //Ð¾Ð±Ð½ÑƒÐ»ÐµÐ½Ð¸Ðµ ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»Ñ Ð½Ð° ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚
              
              void nullPreviousElPtr(struct stackElement* sE) {
                   sE->prev = NULL;
                   return;     
-             } //îáíóëåíèå óêàçàòåëÿ íà ïðåäûäóùèé ýëåìåíò
+             } //Ð¾Ð±Ð½ÑƒÐ»ÐµÐ½Ð¸Ðµ ÑƒÐºÐ°Ð·Ð°Ñ‚ÐµÐ»Ñ Ð½Ð° Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚
              
              
-             void insertUpper(struct stackElement* sE, struct stackElement* prv) {  // âñòàâêà ýëåìåíòà ïåðåä äàííûì â öåïè
+             void insertUpper(struct stackElement* sE, struct stackElement* prv) {  // Ð²ÑÑ‚Ð°Ð²ÐºÐ° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð¿ÐµÑ€ÐµÐ´ Ð´Ð°Ð½Ð½Ñ‹Ð¼ Ð² Ñ†ÐµÐ¿Ð¸
                   struct stackElement* nxt;
                   int flag = 1;
                   if (prv->next != NULL)
@@ -67,7 +67,7 @@ struct stackElement {
                   return;                  
              }
              
-             void insertLower(struct stackElement* sE, struct stackElement* nxt) {  // âñòàâêà ýëåìåíòà ïîñëå äàííîãî â öåïè
+             void insertLower(struct stackElement* sE, struct stackElement* nxt) {  // Ð²ÑÑ‚Ð°Ð²ÐºÐ° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð¿Ð¾ÑÐ»Ðµ Ð´Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð² Ñ†ÐµÐ¿Ð¸
                   struct stackElement* prv;
                   int flag = 1;
                   if (nxt->prev != NULL)
@@ -80,7 +80,7 @@ struct stackElement {
                   return;                  
              }
              
-             void excludeFromChain(struct stackElement* sE) {  //èñêëþ÷åíèå ýëåìåíòà èç öåïè
+             void excludeFromChain(struct stackElement* sE) {  //Ð¸ÑÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð¸Ð· Ñ†ÐµÐ¿Ð¸
                   struct stackElement *nxt;
                   struct stackElement *prv;
                   int flag_next = 1;
@@ -220,15 +220,15 @@ void sort(struct stack* stk) {
      return;
 }
 
-void inverse(struct stack* stk) {  //èíâåðòèðîâàòü ñòåê
+void inverse(struct stack* stk) {  //Ð¸Ð½Ð²ÐµÑ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ ÑÑ‚ÐµÐº
 	int n, i;
-    struct stackElement *current;   //ïîñëåäíèé íîâîóïîðÿäî÷åííûé ýëåìåíò
-	struct stackElement *beforeLast; //ñëåäóþùèé äëÿ ïîñëåäíåãî ñòàðîóïîðÿäî÷åííîãî
-	struct stackElement *last;       //ïîñëåäíèé ñòàðîóïîðÿäî÷åííûé
+    struct stackElement *current;   //Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸Ð¹ Ð½Ð¾Ð²Ð¾ÑƒÐ¿Ð¾Ñ€ÑÐ´Ð¾Ñ‡ÐµÐ½Ð½Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚
+	struct stackElement *beforeLast; //ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ Ð´Ð»Ñ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÐµÐ³Ð¾ ÑÑ‚Ð°Ñ€Ð¾ÑƒÐ¿Ð¾Ñ€ÑÐ´Ð¾Ñ‡ÐµÐ½Ð½Ð¾Ð³Ð¾
+	struct stackElement *last;       //Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸Ð¹ ÑÑ‚Ð°Ñ€Ð¾ÑƒÐ¿Ð¾Ñ€ÑÐ´Ð¾Ñ‡ÐµÐ½Ð½Ñ‹Ð¹
 	
     n  = stk->length;
 	if (n < 2)
-	   return;           //åñëè äëèíà < 2 - íè÷åãî íå äåëàòü
+	   return;           //ÐµÑÐ»Ð¸ Ð´Ð»Ð¸Ð½Ð° < 2 - Ð½Ð¸Ñ‡ÐµÐ³Ð¾ Ð½Ðµ Ð´ÐµÐ»Ð°Ñ‚ÑŒ
 	
 	current = (stk->header);
 	beforeLast =  (stk->header);
